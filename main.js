@@ -1,8 +1,10 @@
 let currentId = 0;
+
 function addBook(){
 	const data = getData();
 	console.log(data);
 }
+
 function getById(elementId){
 	return document.getElementById(elementId);
 }

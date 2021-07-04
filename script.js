@@ -5,4 +5,17 @@ document.addEventListener("DOMContentLoaded",function(){
 		event.preventDefault();
 		addBook();	
 	})
+
+	const inputCheckBox = document.querySelector("input[name=checkbox]");
+
+	inputCheckBox.addEventListener('change',(event) =>{
+
+		const bookIsCompleteSpan = document.getElementById('bookIsComplete');
+		if(inputCheckBox.checked){
+			bookIsCompleteSpan.innerText = 'Selesai dibaca';
+		}
+		else{
+			bookIsCompleteSpan.innerText = 'Belum selesai dibaca';
+		}
+	})
 });
