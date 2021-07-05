@@ -17,5 +17,6 @@ document.addEventListener("DOMContentLoaded",function(){
 		else{
 			bookIsCompleteSpan.innerText = 'Belum selesai dibaca';
 		}
-	})
+	});
+	saveData();
 });
