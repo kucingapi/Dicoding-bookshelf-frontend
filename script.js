@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded",function(){
 	const inputBook = document.getElementById('inputBook');
+	getData();
 
 	inputBook.addEventListener("submit",(event)=>{
 		event.preventDefault();

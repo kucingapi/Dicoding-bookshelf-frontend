@@ -1,5 +1,3 @@
-let doneReadingShelf = [];
-let readingShelf = [];
 
 // Function that help other function 
 function getById(elementId){
@@ -21,11 +19,12 @@ function createElementWithText(item,text){
 	return element;
 }
 
+// event listener
 function addBook(){
 	const book = getBook();
-	console.log(book);
 	putBook(book);
 	putBookInDom(book);
+	saveData();
 }
 
 function getBook(){
