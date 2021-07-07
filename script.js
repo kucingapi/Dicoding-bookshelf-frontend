@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded",function(){
 	const inputBook = document.getElementById('inputBook');
 	getData();
+	loadAllBook();
 
 	inputBook.addEventListener("submit",(event)=>{
 		event.preventDefault();
 		addBook();	
+		saveData();
 	})
 
 	const inputCheckBox = document.querySelector("input[name=checkbox]");
@@ -19,5 +21,4 @@ document.addEventListener("DOMContentLoaded",function(){
 			bookIsCompleteSpan.innerText = 'Belum selesai dibaca';
 		}
 	});
-	saveData();
 });

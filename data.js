@@ -13,16 +13,20 @@ function isStorageExist(){
 }
 
 function saveData(){
-	console.log(JSON.stringify(doneReadingShelf));
 	if(isStorageExist){
 		localStorage.setItem(STORAGE_KEYS1,JSON.stringify(doneReadingShelf));
 		localStorage.setItem(STORAGE_KEYS2,JSON.stringify(readingShelf));
 	}
+	getArray();
 }
 
 function getData(){
-
-	console.log(JSON.parse(localStorage.getItem(STORAGE_KEYS1)));
+	if(localStorage.getItem(STORAGE_KEYS1) !== null)
 	doneReadingShelf = JSON.parse(localStorage.getItem(STORAGE_KEYS1));
+	if(localStorage.getItem(STORAGE_KEYS1) !== null)
 	readingShelf = JSON.parse(localStorage.getItem(STORAGE_KEYS2));
+}
+
+function getArray(){
+	console.log({doneReadingShelf,readingShelf});
 }

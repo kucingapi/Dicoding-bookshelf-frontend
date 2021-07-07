@@ -18,13 +18,19 @@ function createElementWithText(item,text){
 	element.innerText = text;
 	return element;
 }
-
+// When the contet frist time get load 
+function loadAllBook(){
+	const puttingElementToDom = (element) => {
+		putBookInDom(element);
+	};
+	doneReadingShelf.forEach(puttingElementToDom);
+	readingShelf.forEach(puttingElementToDom);
+}
 // event listener
 function addBook(){
 	const book = getBook();
 	putBook(book);
 	putBookInDom(book);
-	saveData();
 }
 
 function getBook(){
@@ -43,7 +49,7 @@ function putBook(book){
 	doneReading? 
 		doneReadingShelf.push(book) :
 		readingShelf.push(book);
-
+	getArray();	
 }
 
 function putBookInDom(book){
@@ -102,12 +108,14 @@ function createButton(styles,type,book,bookContainer){
 	const buttonEvent = (type === 'delete') ? 
 	(event) => {
 		deleteBookArray();
+		saveData();
 	} :
 	(event) => {
 		deleteBookArray();
 		book.isComplete = !book.isComplete;
 		putBookInDom(book);
 		putBook(book);
+		saveData();
 	};
 
 	button.addEventListener('click',buttonEvent);		
